@@ -6,7 +6,7 @@ blur=false
 fit='fill'
 thumbnailStorePath="$HOME/Pictures/i3-video-wallpaper"
 
-isPlaying=false
+isPlaying=true
 
 PIDFILE="/var/run/user/$UID/vwp.pid"
 
@@ -91,7 +91,7 @@ play_video() {
   if [ $alwaysRun == true ]; then
     xwinwrap -ov -ni -g "$1" -- mpv --fs --loop-file --no-audio --no-osc --no-osd-bar -wid WID --no-input-default-bindings "$2" &
   else
-    xwinwrap -ov -ni -g "$1" -- mpv --fs --loop-file --input-ipc-server="/tmp/mpvsocket$3" --pause --no-audio --no-osc --no-osd-bar -wid WID --no-input-default-bindings "$2" &
+    xwinwrap -ov -ni -g "$1" -- mpv --fs --loop-file --input-ipc-server="/tmp/mpvsocket$3" --no-audio --no-osc --no-osd-bar -wid WID --no-input-default-bindings "$2" &
   fi
   PIDs+=($!)
 }
