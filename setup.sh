@@ -239,7 +239,7 @@ main() {
         pause_video
         isPlaying=false
       fi
-      sleep 0.5
+      sleep 0.2
     done
   fi
 }
